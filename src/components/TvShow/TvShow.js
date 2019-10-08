@@ -1,34 +1,41 @@
 import React from "react";
-import {
-  MDBBtn,
-  MDBCard,
-  MDBCardBody,
-  MDBCardImage,
-  MDBCardTitle,
-  MDBCardText,
-  MDBCol
-} from "mdbreact";
+import { Link } from "react-router-dom";
 
-const TvShow = props => {
+const tvShow = ({ tvShow, showDetails, handleFavorites, saved }) => {
   return (
-    <MDBCol>
-      <MDBCard style={{ width: "22rem" }}>
-        <MDBCardImage
-          className="img-fluid"
-          src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg"
-          waves
-        />
-        <MDBCardBody>
-          <MDBCardTitle>Card title</MDBCardTitle>
-          <MDBCardText>
-            Some quick example text to build on the card title and make up the
-            bulk of the card&apos;s content.
-          </MDBCardText>
-          <MDBBtn href="#">MDBBtn</MDBBtn>
-        </MDBCardBody>
-      </MDBCard>
-    </MDBCol>
+    <div className="tvShow  p-0 pb-2">
+      {tvShow.poster_path ? (
+        <Link onClick={showDetails} to={`/details/${tvShow.id}`}>
+          <img
+            className="w-100"
+            src={`http://image.tmdb.org/t/p/w342/${tvShow.poster_path}`}
+            alt={tvShow.name}
+          />
+        </Link>
+      ) : (
+        <div className="noFound w-100 d-flex flex-column align-items-center justify-content-center">
+          <p className="titulo text-center">{tvShow.name}</p>
+          <p>Image not Found </p>
+        </div>
+      )}
+
+      <div className="w-100 p-0 py-2 d-flex justify-content-around align-items-center ">
+        <Link
+          to={`/details/${tvShow.id}`}
+          className="detalles"
+          onClick={showDetails}
+        >
+          Details
+        </Link>
+        <i
+          className=" material-icons save d-inline float-right align-text-middle"
+          onClick={handleFavorites}
+        >
+          {saved ? "favorite" : "favorite_border"}
+        </i>
+      </div>
+    </div>
   );
 };
 
-export default TvShow;
+export default tvShow;

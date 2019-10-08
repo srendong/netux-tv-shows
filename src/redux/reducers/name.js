@@ -1,10 +1,10 @@
-const defaultState = [];
+const defaultState = "";
 
 const reducer = (state = defaultState, { type, payload }) => {
   switch (type) {
-    case "searchTvShows": {
-      return payload;
-    }
+    case "searchName": {
+        return payload;
+      }
     default:
       return state;
   }

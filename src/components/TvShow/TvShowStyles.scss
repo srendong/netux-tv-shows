@@ -1,0 +1,46 @@
+.tvShow {
+    background-color: rgb(31, 31, 31);
+    // height: 50vh;
+    .titulo {
+      @include titulo;
+      color: rgb(212, 212, 212);
+      font-size: 1.2rem;
+    }
+    p {
+      @include parrafo;
+      color: rgb(207, 207, 207);
+      span {
+        color: rgb(236, 234, 234);
+      }
+    }
+    img,
+    .noFound {
+      height: 90%;
+    }
+    .detalles {
+      border: none;
+      border-bottom: solid 2px;
+      border-color: white;
+      background: none;
+      @include parrafo;
+      color: white;
+      text-decoration: none;
+    }
+    .titulo {
+      @include parrafo;
+      font-size: 2rem;
+      color: rgb(202, 202, 202);
+      @media (max-width: 575.98px) {
+        font-size: 1.3rem;
+      }
+      @media (max-width: 767.98px) {
+        font-size: 1.6rem;
+      }
+    }
+    .save {
+      color: rgb(223, 223, 223);
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
