@@ -2,18 +2,25 @@ import React, { Component } from "react";
 import HomePage from "./HomePage";
 import { connect } from "react-redux";
 import showDeatails from "../../redux/actions/showDetails";
-import loadGenres from "../../redux/actions/loadGenres";
+import loadCharacters from "../../redux/actions/loadCharacters";
+import loadReviews from "../../redux/actions/loadReviews";
+import loadSimilarTvShows from "../../redux/actions/loadSimilarTvShows";
+import loadTrailer from "../../redux/actions/loadTrailer";
 import upDownPageSearch from "../../redux/actions/upDownPageSearch";
+
 
 let pageHome = 1;
 
 class Home extends Component {
-  // componentDidMount() {
-  //   this.props.dispatch(loadGenres());
-  // }
 
+  
   showDetails = id => {
     this.props.dispatch(showDeatails(id));
+    this.props.dispatch(loadCharacters(id));
+    this.props.dispatch(loadReviews(id));
+    this.props.dispatch(loadSimilarTvShows(id));
+    this.props.dispatch(loadTrailer(id));
+    
   };
 
   aditional = action => {
@@ -42,7 +49,6 @@ class Home extends Component {
       <HomePage
         tvShows={this.props.tvShows}
         showDetails={this.showDetails}
-        saved={this.saved}
         upPage={() => this.aditional("upPageSearch")}
         downPage={() => this.aditional("downPageSearch")}
         pageHome={pageHome}

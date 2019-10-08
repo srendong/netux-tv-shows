@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 //MDB
 import {
   MDBNavbar,
@@ -16,7 +17,7 @@ import {
 } from "mdbreact";
 import { HashRouter as Router } from "react-router-dom";
 
-const NavbarPage = ({ state, onClick }) => {
+const NavbarPage = ({ state, onClick, value, handleChange, handleSubmit }) => {
   return (
     <div className="NavBar">
       <header>
@@ -33,13 +34,16 @@ const NavbarPage = ({ state, onClick }) => {
               <strong>TV SHOWS</strong>
             </MDBNavbarBrand>
             <MDBNavItem>
-              <MDBFormInline waves>
+              <MDBFormInline waves onSubmit={handleSubmit}>
                 <div className="md-form my-0 text-center">
                   <input
                     className="form-control mr-sm-2"
                     type="text"
                     placeholder="Search"
                     aria-label="Search"
+                    name="name"
+                    value={value}
+                    onChange={handleChange}
                   />
                 </div>
               </MDBFormInline>
@@ -56,25 +60,6 @@ const NavbarPage = ({ state, onClick }) => {
                   <MDBNavLink className="link" to="/popular">
                     Popular
                   </MDBNavLink>
-                </MDBNavItem>
-                <MDBNavItem>
-                  <MDBDropdown>
-                    <MDBDropdownToggle nav caret>
-                      <div className="d-inline">Genres</div>
-                    </MDBDropdownToggle>
-                    <MDBDropdownMenu className="dropdown-default">
-                      <MDBDropdownItem href="#!">Action</MDBDropdownItem>
-                      <MDBDropdownItem href="#!">
-                        Another Action
-                      </MDBDropdownItem>
-                      <MDBDropdownItem href="#!">
-                        Something else here
-                      </MDBDropdownItem>
-                      <MDBDropdownItem href="#!">
-                        Something else here
-                      </MDBDropdownItem>
-                    </MDBDropdownMenu>
-                  </MDBDropdown>
                 </MDBNavItem>
               </MDBNavbarNav>
             </MDBCollapse>

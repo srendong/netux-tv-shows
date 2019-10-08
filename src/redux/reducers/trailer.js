@@ -2,10 +2,7 @@ const defaultState = {};
 
 const reducer = (state = defaultState, { type, payload }) => {
   switch (type) {
-    case "showDetails": {
-        return payload;
-      }
-      case "clearDetails": {
+    case "loadTrailer": {
         return payload;
       }
     default:

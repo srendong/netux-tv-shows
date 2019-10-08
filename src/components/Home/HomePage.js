@@ -8,7 +8,7 @@ const HomePage = props => {
     <div className="HomePage">
       <NavBarIndex />
       {props.tvShows.length === 0 ? (
-        <div className="formulario w-80 d-flex justify-content-center align-items-center">
+        <div className="rowForm w-80 d-flex justify-content-center align-items-center">
           <FormIndex />
         </div>
       ) : (
@@ -17,9 +17,9 @@ const HomePage = props => {
             <h2 className="text-center mt-5">{props.name}</h2>
           </div>
           <div className="row justify-content-center ">
-            <div className="col-12 row justify-content-center">
+            <div className="col-11 row justify-content-center">
               {props.tvShows.map(tvShow => (
-                <div key={tvShow.id} className="col-6 col-md-4 col-lg-3 p-1">
+                <div key={tvShow.id} className="col-12 col-sm-6 col-md-4 col-lg-3 p-1">
                   <TvShow
                     tvShow={tvShow}
                     showDetails={() => props.showDetails(tvShow.id)}

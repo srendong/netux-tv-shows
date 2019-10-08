@@ -4,17 +4,25 @@ import tvShows from "./reducers/tvShows";
 import details from "./reducers/details";
 import genres from "./reducers/genres";
 import name from "./reducers/name";
+import trailer from "./reducers/trailer";
+import reviews from "./reducers/reviews";
+import characters from "./reducers/characters";
+import popularTvShows from "./reducers/popularTvShows";
+
+
 
 //redux thunk
 import thunk from "redux-thunk";
-
 
 const reducer = combineReducers({
   tvShows,
   details,
   genres,
-  name
-  
+  name,
+  trailer,
+  reviews,
+  characters,
+  popularTvShows
 });
 
 //thunk
