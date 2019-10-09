@@ -14,9 +14,9 @@ const HomePage = props => {
       ) : (
         <div>
           <div className="container">
-            <h2 className="text-center my-3  text-capitalize">
-              Search: {props.name.split("%20").join(" ")}
-            </h2>
+            <h6 className="text-center my-3  text-capitalize">
+            Searched: <h2>{props.name.split("%20").join(" ")}</h2>
+            </h6>
           </div>
           <div className="d-flex justify-content-center w-100 my-3">
             <button

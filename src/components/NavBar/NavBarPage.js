@@ -12,7 +12,7 @@ import {
 } from "mdbreact";
 import { HashRouter as Router, withRouter } from "react-router-dom";
 
-const NavbarPage = ({ state, onClick, value, handleChange, handleSubmit }) => {
+const NavbarPage = ({ state, onClick, value, handleChange, handleSubmit ,clearHome}) => {
   return (
     <div className="NavBar">
       <header>
@@ -25,7 +25,7 @@ const NavbarPage = ({ state, onClick, value, handleChange, handleSubmit }) => {
             scrolling
             color=" black"
           >
-            <MDBNavbarBrand href="/home">
+            <MDBNavbarBrand href="/home" onClick={clearHome}>
               <strong>TV SHOWS</strong>
             </MDBNavbarBrand>
             <MDBNavItem>

@@ -6,6 +6,8 @@ import NavBarPage from "./NavBarPage";
 //actions
 import searchTvShows from "../../redux/actions/searchTvShows";
 import searchName from "../../redux/actions/searchName";
+import clearHome from "../../redux/actions/clearHome";
+
 
 class NavBar extends Component {
   constructor(props) {
@@ -30,6 +32,9 @@ class NavBar extends Component {
     this.props.history.push(`/home}`);
     this.setState({ name: "" });
   };
+  clearHome=()=>{
+this.props.dispatch(clearHome())
+  }
 
   onClick() {
     this.setState({
@@ -46,6 +51,7 @@ class NavBar extends Component {
         value={this.state.name}
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
+        clearHome={this.clearHome}
       />
     );
   }

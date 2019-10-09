@@ -8,6 +8,9 @@ const reducer = (state = defaultState, { type, payload }) => {
     case "upDownPageSearch": {
       return payload;
     }
+    case "clearHome": {
+      return payload;
+    }
     default:
       return state;
   }
