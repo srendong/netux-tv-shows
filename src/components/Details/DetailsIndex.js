@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 //components
 import DetailsPage from "./DetailsPage";
 //actions
@@ -87,7 +88,6 @@ class Details extends Component {
       key: "oIRkuav64Gk",
       site: "YouTube"
     },
-
     characters: [
       {
         character: "Triana Marín",
@@ -173,26 +173,27 @@ class Details extends Component {
     ]
   };
   showDetails = id => {
-    this.props.dispatch(showDeatails(id));
-    this.props.dispatch(loadCharacters(id));
-    this.props.dispatch(loadReviews(id));
-    this.props.dispatch(loadSimilarTvShows(id));
-    this.props.dispatch(loadTrailer(id));
+     this.props.dispatch(loadCharacters(id));
+     this.props.dispatch(loadReviews(id));
+     this.props.dispatch(loadSimilarTvShows(id));
+     this.props.dispatch(loadTrailer(id));
+     this.props.dispatch(showDeatails(id));
+     this.props.history.push(`/details/${id}`);
   };
-
+  
   render() {
     return (
       <DetailsPage
-        tvShow={this.state.details}
-        // tvShow={this.props.details}
-        characters={this.state.characters}
-        // characters={this.props.characters}
-        trailer={this.state.trailer}
-        // trailer={this.props.trailer}
-        similarTvShows={this.state.similar}
-        // similarTvShows={this.props.similarTvShows}
-        reviews={this.state.reviews}
-        // reviews={this.props.reviews}
+        // tvShow={this.state.details}
+        tvShow={this.props.details}
+        // characters={this.state.characters}
+        characters={this.props.characters}
+        // trailer={this.state.trailer}
+        trailer={this.props.trailer}
+        // similarTvShows={this.state.similar}
+        similarTvShows={this.props.similarTvShows.slice(0,10)}
+        // reviews={this.state.reviews}
+        reviews={this.props.reviews}
         //
         showDetails={this.showDetails}
       />
@@ -201,6 +202,7 @@ class Details extends Component {
 }
 const mapStateToProps = state => {
   return {
+    popularTvShows: state.popularTvShows,
     details: state.details,
     characters: state.characters,
     reviews: state.reviews,
@@ -208,4 +210,4 @@ const mapStateToProps = state => {
     trailer: state.trailer
   };
 };
-export default connect(mapStateToProps)(Details);
+export default withRouter(connect(mapStateToProps)(Details));

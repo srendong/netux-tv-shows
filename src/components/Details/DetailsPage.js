@@ -57,9 +57,13 @@ const DetailsPage = ({
             </div>
           </div>
           <div className="col-12 col-md-4 d-flex justify-center align-items-center p-4 elegant-color-dark">
+          {trailer.length >0? 
             <ReactPlayer
               url={`https://www.youtube.com/watch?v=${trailer.key}`}
-            />
+            />:
+            <p>Trailer Not Found</p>
+          }
+            
           </div>
           <div className="col-12 col-md-8 m-0 elegant-color">
             <div>

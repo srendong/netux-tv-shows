@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 //MDB
 import {
   MDBNavbar,
@@ -10,10 +9,6 @@ import {
   MDBNavItem,
   MDBNavLink,
   MDBFormInline,
-  MDBDropdown,
-  MDBDropdownToggle,
-  MDBDropdownMenu,
-  MDBDropdownItem
 } from "mdbreact";
 import { HashRouter as Router } from "react-router-dom";
 
@@ -28,7 +23,7 @@ const NavbarPage = ({ state, onClick, value, handleChange, handleSubmit }) => {
             dark
             expand="md"
             scrolling
-            color="blue-grey darken-4"
+            color=" black"
           >
             <MDBNavbarBrand href="/home">
               <strong>TV SHOWS</strong>

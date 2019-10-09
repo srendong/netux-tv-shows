@@ -5,7 +5,7 @@ const SimilarTvShows = ({ tvShow, showDetails }) => {
       <div className="row align-items-center">
         <div className="col-4">
           <img
-          className="w-100"
+          className="w-75"
             src={`https://image.tmdb.org/t/p/original${tvShow.poster_path}`}
             alt=""
           />

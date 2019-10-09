@@ -7,29 +7,25 @@ import loadReviews from "../../redux/actions/loadReviews";
 import loadSimilarTvShows from "../../redux/actions/loadSimilarTvShows";
 import loadTrailer from "../../redux/actions/loadTrailer";
 import upDownPageSearch from "../../redux/actions/upDownPageSearch";
-
+import { withRouter } from "react-router-dom";
 
 let pageHome = 1;
 
 class Home extends Component {
-
-  
-  showDetails = id => {
+  showDetails =  id => {
     this.props.dispatch(showDeatails(id));
     this.props.dispatch(loadCharacters(id));
     this.props.dispatch(loadReviews(id));
     this.props.dispatch(loadSimilarTvShows(id));
     this.props.dispatch(loadTrailer(id));
-    
+    this.props.history.push(`/details/${id}`);
   };
 
   aditional = action => {
     switch (action) {
       case "upPageSearch":
         pageHome++;
-        return this.props.dispatch(
-          upDownPageSearch(this.props.name, pageHome)
-        );
+        return this.props.dispatch(upDownPageSearch(this.props.name, pageHome));
       case "downPageSearch":
         if (pageHome > 1) {
           pageHome--;
@@ -65,4 +61,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Home);
+export default withRouter(connect(mapStateToProps)(Home));
