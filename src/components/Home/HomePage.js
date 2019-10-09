@@ -14,7 +14,7 @@ const HomePage = props => {
       ) : (
         <div>
           <div className="container">
-            <h2 className="text-center mt-5">{props.name}</h2>
+            <h2 className="text-center my-3  text-capitalize">Search: {props.name.replace("%20"," ")}</h2>
           </div>
           <div className="row justify-content-center ">
             <div className="col-11 row justify-content-center">

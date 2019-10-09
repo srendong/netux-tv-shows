@@ -19,4 +19,31 @@
   font-size: 3rem;
   color: rgb(73, 73, 73);
 }
+@mixin boton {
+  background: rgb(49, 49, 49);
+  border: none;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  width: 2rem;
+  height: 2rem;
+  @include subtitulo;
+  font-weight: 700;
+  color: white;
+}
+
+@mixin numero {
+  .numero{
+    background: none;
+    border: 2px solid rgb(128, 128, 128);
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    @include subtitulo
+}
+}
 // variables

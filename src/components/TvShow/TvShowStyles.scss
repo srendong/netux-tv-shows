@@ -1,40 +1,31 @@
 .tvShow {
-    background-color: rgb(31, 31, 31);
-    .aa{
-      .img1{
-        height: 80%;
-      }
-    }
-    
-    .noFound{
-      height: 80%;
-      width: 100%;
-      background-color: rgb(158, 158, 158);
-    }
-    .title {
-      @include titulo;
-      color: rgb(212, 212, 212);
-      font-size: 1.2rem;
-      
-    }
-    p {
-      @include parrafo;
-      color: rgb(207, 207, 207);
-      span {
-        color: rgb(236, 234, 234);
-      }
-    }
-    .subtitle {
-      @include parrafo;
-      font-size: 2rem;
-      color: rgb(202, 202, 202);
-      @media (max-width: 575.98px) {
-        font-size: 1.3rem;
-      }
-      @media (max-width: 767.98px) {
-        font-size: 1.6rem;
-      }
+  background-color: rgb(31, 31, 31);
+
+  .img,
+  .noFound {
+    height: 100%;
+  }
+  .title {
+    @include titulo;
+    color: rgb(212, 212, 212);
+    font-size: 1.2rem;
+  }
+  p {
+    @include parrafo;
+    color: rgb(207, 207, 207);
+    span {
+      color: rgb(236, 234, 234);
     }
   }
-
-  
+  .subtitle {
+    @include parrafo;
+    font-size: 2rem;
+    color: rgb(202, 202, 202);
+    @media (max-width: 575.98px) {
+      font-size: 1.3rem;
+    }
+    @media (max-width: 767.98px) {
+      font-size: 1.6rem;
+    }
+  }
+}

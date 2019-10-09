@@ -10,6 +10,8 @@ import loadReviews from "../../redux/actions/loadReviews";
 import loadSimilarTvShows from "../../redux/actions/loadSimilarTvShows";
 import loadTrailer from "../../redux/actions/loadTrailer";
 import loadByGenres from "../../redux/actions/loadByGenres";
+import getGenreName from "../../redux/actions/getGenreName";
+
 
 class Details extends Component {
   state = {
@@ -182,8 +184,9 @@ class Details extends Component {
     this.props.dispatch(showDeatails(id));
     this.props.history.push(`/details/${id}`);
   };
-  tvShowsByGenre = id => {
+  tvShowsByGenre = (id,name) => {
     this.props.dispatch(loadByGenres(id));
+    this.props.dispatch(getGenreName(name));
     this.props.history.push(`/genres/${id}`);
 
   };

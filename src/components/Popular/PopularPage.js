@@ -9,7 +9,7 @@ const PopularPage = props => {
       <NavBarIndex />
       <div>
           <div className="container">
-            <h2 className="text-center mt-5">Popular Tv shows</h2>
+            <h2 className="text-center mt-3 ">Popular Tv shows</h2>
           </div>
           <div className="row justify-content-center ">
             <div className="col-11 row justify-content-center">

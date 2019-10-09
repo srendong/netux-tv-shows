@@ -12,9 +12,9 @@ const tvShow = ({ tvShow, showDetails }) => {
   return (
     <MDBCard className="h-100 tvShow">
       {tvShow.poster_path ? (
-        <Link to={`/details/${tvShow.id}`} className="aa img-fluid text-center">
+        <Link onClick={showDetails} className="tvShowImage">
           <MDBCardImage
-            className=" w-100"
+            className="w-100 h-100 img"
             src={`http://image.tmdb.org/t/p/w342/${tvShow.poster_path}`}
             waves
           />
@@ -34,9 +34,13 @@ const tvShow = ({ tvShow, showDetails }) => {
         ) : (
           <MDBCardText className="subtitle">{tvShow.overview}</MDBCardText>
         )}
-        <Link to={`/details/${tvShow.id}`}>
-        <button className="btn blue-grey darken-1 text-white" onClick={showDetails}>Details</button>
-        </Link>
+
+        <button
+          className="btn blue-grey darken-1 text-white"
+          onClick={showDetails}
+        >
+          Details
+        </button>
       </MDBCardBody>
     </MDBCard>
   );

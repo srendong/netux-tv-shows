@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 //components
 import PopularPage from "./PopularPage";
 import showDeatails from "../../redux/actions/showDetails";
@@ -21,6 +22,7 @@ class Popular extends Component {
     this.props.dispatch(loadReviews(id));
     this.props.dispatch(loadSimilarTvShows(id));
     this.props.dispatch(loadTrailer(id));
+    this.props.history.push(`/details/${id}`);
   };
   aditional = action => {
     switch (action) {
@@ -59,4 +61,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Popular);
+export default withRouter(connect(mapStateToProps)(Popular));

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+
 //components
 import GenresPage from "./GenresPage";
 //actions
@@ -20,6 +22,7 @@ class Genres extends Component {
     this.props.dispatch(loadReviews(id));
     this.props.dispatch(loadSimilarTvShows(id));
     this.props.dispatch(loadTrailer(id));
+    this.props.history.push(`/details/${id}`);
   };
   aditional = action => {
     switch (action) {
@@ -50,14 +53,16 @@ class Genres extends Component {
         downPage={() => this.aditional("downPageSearch")}
         pageGenres={pageGenres}
         name={this.props.name}
+        genreName={this.props.genreName}
       />
     );
   }
 }
 const mapStateToProps = state => {
   return {
-    tvShowsByGenre: state.tvShowsByGenre
+    tvShowsByGenre: state.tvShowsByGenre,
+    genreName: state.genreName
   };
 };
 
-export default connect(mapStateToProps)(Genres);
+export default withRouter(connect(mapStateToProps)(Genres));

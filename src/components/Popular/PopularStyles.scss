@@ -1,2 +1,7 @@
 .PopularPage {
+    h2{
+        @include titulo;
+        font-weight: 500;
+        border-bottom: solid 2px rgb(112, 112, 112)
+    }
 }
