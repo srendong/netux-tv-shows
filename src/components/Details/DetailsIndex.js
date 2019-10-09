@@ -3,7 +3,12 @@ import { connect } from "react-redux";
 //components
 import DetailsPage from "./DetailsPage";
 //actions
-const trailer = "oIRkuav64Gk"
+import showDeatails from "../../redux/actions/showDetails";
+import loadCharacters from "../../redux/actions/loadCharacters";
+import loadReviews from "../../redux/actions/loadReviews";
+import loadSimilarTvShows from "../../redux/actions/loadSimilarTvShows";
+import loadTrailer from "../../redux/actions/loadTrailer";
+
 class Details extends Component {
   state = {
     details: {
@@ -50,7 +55,8 @@ class Details extends Component {
       origin_country: ["ES"],
       original_language: "es",
       original_name: "Toy Boy",
-      overview: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, ducimus ut rerum quisquam possimus non dignissimos a inventore ipsam. Deleniti ullam aliquid, quibusdam accusamus est totam necessitatibus eaque quo quasi?",
+      overview: "",
+      // overview: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, ducimus ut rerum quisquam possimus non dignissimos a inventore ipsam. Deleniti ullam aliquid, quibusdam accusamus est totam necessitatibus eaque quo quasi?",
       popularity: 3.706,
       poster_path: "/6PICbFc9JyiiUwwZws7eB4EYNMm.jpg",
       production_companies: [
@@ -78,14 +84,10 @@ class Details extends Component {
       vote_count: 2
     },
     trailer: {
-      id: 87763,
-      results: [
-        {
-          key: "oIRkuav64Gk",
-          site: "YouTube"
-        }
-      ]
+      key: "oIRkuav64Gk",
+      site: "YouTube"
     },
+
     characters: [
       {
         character: "Triana Marín",
@@ -150,8 +152,34 @@ class Details extends Component {
         profile_path: "/TyhQnMTilIaLWWi3Z7Sj6aEEAR.jpg",
         order: 6
       }
+    ],
+    similar: [
+      {
+        backdrop_path: "/jqLv26q1BcU6mIEWBl0z7nmUYr8.jpg",
+        first_air_date: "2005-09-19",
+        genre_ids: [35],
+        id: 1100,
+        name: "How I Met Your Mother",
+        origin_country: ["US"],
+        original_language: "en",
+        original_name: "How I Met Your Mother",
+        overview:
+          "How I Met Your Mother is an American sitcom that originally aired on CBS from September 19, 2005, to March 31, 2014. The series follows the main character, Ted Mosby, and his group of friends in Manhattan. As a framing device, Ted, in the year 2030, recounts to his son and daughter the events that led to his meeting their mother.",
+        popularity: 52.124,
+        poster_path: "/izncB6dCLV7LBQ5MsOPyMx9mUDa.jpg",
+        vote_average: 7.5,
+        vote_count: 1204
+      }
     ]
   };
+  showDetails = id => {
+    this.props.dispatch(showDeatails(id));
+    this.props.dispatch(loadCharacters(id));
+    this.props.dispatch(loadReviews(id));
+    this.props.dispatch(loadSimilarTvShows(id));
+    this.props.dispatch(loadTrailer(id));
+  };
+
   render() {
     return (
       <DetailsPage
@@ -159,12 +187,14 @@ class Details extends Component {
         // tvShow={this.props.details}
         characters={this.state.characters}
         // characters={this.props.characters}
-        trailer={trailer}
+        trailer={this.state.trailer}
         // trailer={this.props.trailer}
-        similarTvShows={this.state.similarTvShows}
+        similarTvShows={this.state.similar}
         // similarTvShows={this.props.similarTvShows}
         reviews={this.state.reviews}
         // reviews={this.props.reviews}
+        //
+        showDetails={this.showDetails}
       />
     );
   }

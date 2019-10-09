@@ -2,9 +2,27 @@
   .contenedor {
     height: 90vh;
   }
+h2{
+  @include titulo;
+  color: rgb(250, 250, 250)
+}
+h3{
+  @include titulo;
+  color: rgb(194, 194, 194)
+}
+h4{
+  @include subtitulo;
+  color: rgb(194, 194, 194)
+}
+p{
+  @include parrafo;
+  color: rgb(194, 194, 194)
 
+}
   img {
-    width: 60%;
+    width: 70%;
+  color: rgb(255, 255, 255)
+
   }
   // .fila1{
   //   height: 40vh;

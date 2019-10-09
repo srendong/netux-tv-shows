@@ -11,7 +11,7 @@ const loadSimilarTvShows = (id) => {
     );
     dispatch({
       type,
-      payload: response.data
+      payload: response.data.results
     });
   };
 };

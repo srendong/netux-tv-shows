@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
-  MDBBtn,
   MDBCard,
   MDBCardBody,
   MDBCardImage,
@@ -13,8 +12,9 @@ const tvShow = ({ tvShow, showDetails }) => {
   return (
     <MDBCard className="h-100 tvShow">
       {tvShow.poster_path ? (
-        <Link to={`/details/${tvShow.id}`} className="img img-fluid text-center">
+        <Link to={`/details/${tvShow.id}`} className="aa img-fluid text-center">
           <MDBCardImage
+            className=" w-100"
             src={`http://image.tmdb.org/t/p/w342/${tvShow.poster_path}`}
             waves
           />
@@ -35,7 +35,7 @@ const tvShow = ({ tvShow, showDetails }) => {
           <MDBCardText className="subtitle">{tvShow.overview}</MDBCardText>
         )}
         <Link to={`/details/${tvShow.id}`}>
-          <MDBBtn onClick={showDetails}>Details</MDBBtn>
+        <button className="btn blue-grey darken-1 text-white" onClick={showDetails}>Details</button>
         </Link>
       </MDBCardBody>
     </MDBCard>

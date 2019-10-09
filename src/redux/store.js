@@ -8,6 +8,8 @@ import trailer from "./reducers/trailer";
 import reviews from "./reducers/reviews";
 import characters from "./reducers/characters";
 import popularTvShows from "./reducers/popularTvShows";
+import similarTvShows from "./reducers/similarTvShows";
+
 
 
 
@@ -22,7 +24,8 @@ const reducer = combineReducers({
   trailer,
   reviews,
   characters,
-  popularTvShows
+  popularTvShows,
+  similarTvShows
 });
 
 //thunk
