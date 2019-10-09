@@ -1,24 +1,24 @@
 .Form {
-    input {
-      border: none;
-      border-bottom: 3px solid rgb(175, 175, 175);
-      background: none;
-      @media (min-width: 576px) {
-        font-size: 1rem;
-      }
-      @media (min-width: 768px) {
-        font-size: 2rem;
-      }
+  input {
+    border: none;
+    border-bottom: 3px solid rgb(175, 175, 175);
+    background: none;
+    @media (min-width: 576px) {
+      font-size: 1rem;
     }
-    button {
-      background-color: rgb(62, 65, 68);
-      border: none;
-      color: white;
-      border-radius: 2rem;
-      font-size: 1.5rem;
-      -webkit-border-radius: 2rem;
-      -moz-border-radius: 2rem;
-      -ms-border-radius: 2rem;
-      -o-border-radius: 2rem;
+    @media (min-width: 768px) {
+      font-size: 2rem;
     }
   }
+  button {
+    background-color: rgb(62, 65, 68);
+    border: none;
+    color: white;
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+  }
+}

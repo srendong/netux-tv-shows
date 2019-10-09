@@ -3,8 +3,8 @@ const defaultState = "";
 const reducer = (state = defaultState, { type, payload }) => {
   switch (type) {
     case "searchName": {
-        return payload;
-      }
+      return payload;
+    }
     default:
       return state;
   }

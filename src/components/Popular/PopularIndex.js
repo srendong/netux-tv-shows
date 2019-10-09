@@ -10,7 +10,9 @@ import loadSimilarTvShows from "../../redux/actions/loadSimilarTvShows";
 import loadTrailer from "../../redux/actions/loadTrailer";
 import upDownPage from "../../redux/actions/upDownPage";
 import loadPopularTvShows from "../../redux/actions/loadPopularTvShows";
+
 let pagePopular = 1;
+
 class Popular extends Component {
   state = {
     order: false,
@@ -82,5 +84,4 @@ const mapStateToProps = state => {
     popularTvShows: state.popularTvShows
   };
 };
-
 export default withRouter(connect(mapStateToProps)(Popular));

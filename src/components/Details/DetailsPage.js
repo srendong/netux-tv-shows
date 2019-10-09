@@ -2,7 +2,6 @@ import React from "react";
 import ReactPlayer from "react-player";
 //components
 import NavBarIndex from "../NavBar/NavBarIndex";
-
 import Actor from "../Actor/Actor";
 import SimilarTvShow from "../SimilarTvShow/SimilarTvShow";
 

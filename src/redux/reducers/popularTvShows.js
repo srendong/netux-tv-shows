@@ -6,7 +6,7 @@ const reducer = (state = defaultState, { type, payload }) => {
       return payload;
     }
     case "upDownPage": {
-      return payload
+      return payload;
     }
     default:
       return state;

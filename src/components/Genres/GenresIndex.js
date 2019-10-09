@@ -15,7 +15,6 @@ import upDownPageGenre from "../../redux/actions/upDownPageGenre";
 let pageGenres = 1;
 
 class Genres extends Component {
-  state = {};
   showDetails = id => {
     this.props.dispatch(showDeatails(id));
     this.props.dispatch(loadCharacters(id));
@@ -28,7 +27,11 @@ class Genres extends Component {
     switch (action) {
       case "upPageGenre":
         pageGenres++;
-        console.log(pageGenres, this.props.genreNameId.id, this.props.genreNameId.name)
+        console.log(
+          pageGenres,
+          this.props.genreNameId.id,
+          this.props.genreNameId.name
+        );
         return this.props.dispatch(
           upDownPageGenre(this.props.genreNameId.id, pageGenres)
         );

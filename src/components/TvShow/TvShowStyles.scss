@@ -17,11 +17,10 @@
       color: rgb(236, 234, 234);
     }
   }
-  span{
+  span {
     @include parrafo;
     color: rgb(255, 187, 0);
     font-size: 1.3rem;
-
   }
   .subtitle {
     @include parrafo;
@@ -34,12 +33,12 @@
       font-size: 1.6rem;
     }
   }
-  h6{
+  h6 {
     @include parrafo;
     font-size: 1.3rem;
     color: rgb(202, 202, 202);
   }
-  .rating{
+  .rating {
     color: rgb(255, 187, 0);
   }
 }

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import HomePage from "./HomePage";
 import { connect } from "react-redux";
+//components
+import HomePage from "./HomePage";
+//actions
 import showDeatails from "../../redux/actions/showDetails";
 import loadCharacters from "../../redux/actions/loadCharacters";
 import loadReviews from "../../redux/actions/loadReviews";
@@ -23,7 +25,6 @@ class Home extends Component {
   changeOrderByRating = () => {
     this.setState({ ...this.state, orderByRating: !this.state.orderByRating });
   };
-  
   showDetails = id => {
     this.props.dispatch(showDeatails(id));
     this.props.dispatch(loadCharacters(id));
@@ -57,12 +58,11 @@ class Home extends Component {
       return this.props.tvShows.sort((a, b) => b.vote_average - a.vote_average);
     }
   };
-
   render() {
     return (
       <HomePage
         currentState={this.state}
-        tvShows={this.state.order ? this.tvShowSort(): this.props.tvShows}
+        tvShows={this.state.order ? this.tvShowSort() : this.props.tvShows}
         showDetails={this.showDetails}
         upPage={() => this.aditional("upPageSearch")}
         downPage={() => this.aditional("downPageSearch")}
@@ -74,12 +74,10 @@ class Home extends Component {
     );
   }
 }
-
 const mapStateToProps = state => {
   return {
     tvShows: state.tvShows,
     name: state.name
   };
 };
-
 export default withRouter(connect(mapStateToProps)(Home));

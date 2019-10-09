@@ -35,7 +35,7 @@
 }
 
 @mixin numero {
-  .numero{
+  .numero {
     background: none;
     border: 2px solid rgb(128, 128, 128);
     border-radius: 1rem;
@@ -43,7 +43,7 @@
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
-    @include subtitulo
-}
+    @include subtitulo;
+  }
 }
 // variables

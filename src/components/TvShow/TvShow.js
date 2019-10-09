@@ -12,7 +12,7 @@ const tvShow = ({ tvShow, showDetails }) => {
   return (
     <MDBCard className="h-100 tvShow">
       {tvShow.poster_path ? (
-        <Link  onClick={showDetails} className="tvShowImage">
+        <Link onClick={showDetails} className="tvShowImage">
           <MDBCardImage
             className="w-100 h-100 img"
             src={`http://image.tmdb.org/t/p/w342/${tvShow.poster_path}`}
@@ -42,7 +42,7 @@ const tvShow = ({ tvShow, showDetails }) => {
             Details
           </button>
           <div className="d-flex align-items-center">
-          <span className="mr-4">{tvShow.vote_average}</span>
+            <span className="mr-4">{tvShow.vote_average}</span>
           </div>
         </div>
       </MDBCardBody>

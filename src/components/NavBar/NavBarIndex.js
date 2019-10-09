@@ -8,7 +8,6 @@ import searchTvShows from "../../redux/actions/searchTvShows";
 import searchName from "../../redux/actions/searchName";
 import clearHome from "../../redux/actions/clearHome";
 
-
 class NavBar extends Component {
   constructor(props) {
     super(props);
@@ -19,12 +18,10 @@ class NavBar extends Component {
     };
     this.onClick = this.onClick.bind(this);
   }
-
   handleChange = e => {
     e.preventDefault();
     this.setState({ name: e.target.value });
   };
-
   handleSubmit = e => {
     e.preventDefault();
     this.props.dispatch(searchName(this.state.name.replace(/ /g, "%20")));
@@ -32,16 +29,14 @@ class NavBar extends Component {
     this.props.history.push(`/home}`);
     this.setState({ name: "" });
   };
-  clearHome=()=>{
-this.props.dispatch(clearHome())
-  }
-
+  clearHome = () => {
+    this.props.dispatch(clearHome());
+  };
   onClick() {
     this.setState({
       collapse: !this.state.collapse
     });
   }
-
   render() {
     return (
       <NavBarPage
@@ -56,5 +51,4 @@ this.props.dispatch(clearHome())
     );
   }
 }
-
 export default withRouter(connect()(NavBar));

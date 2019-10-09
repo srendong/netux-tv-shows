@@ -1,4 +1,4 @@
-const defaultState = {overview:"",genres:[{name:""}]};
+const defaultState = { overview: "", genres: [{ name: "" }] };
 
 const reducer = (state = defaultState, { type, payload }) => {
   switch (type) {
