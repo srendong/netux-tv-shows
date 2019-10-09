@@ -8,9 +8,9 @@ import loadCharacters from "../../redux/actions/loadCharacters";
 import loadReviews from "../../redux/actions/loadReviews";
 import loadSimilarTvShows from "../../redux/actions/loadSimilarTvShows";
 import loadTrailer from "../../redux/actions/loadTrailer";
-import upDownPageSearch from "../../redux/actions/upDownPageSearch";
+import upDownPage from "../../redux/actions/upDownPage";
 import loadPopularTvShows from "../../redux/actions/loadPopularTvShows";
-let pageHome = 1;
+let pagePopular = 1;
 class Popular extends Component {
   state = {};
   componentDidMount() {
@@ -26,15 +26,13 @@ class Popular extends Component {
   };
   aditional = action => {
     switch (action) {
-      case "upPageSearch":
-        pageHome++;
-        return this.props.dispatch(upDownPageSearch(this.props.name, pageHome));
-      case "downPageSearch":
-        if (pageHome > 1) {
-          pageHome--;
-          return this.props.dispatch(
-            upDownPageSearch(this.props.name, pageHome)
-          );
+      case "upPage":
+        pagePopular++;
+        return this.props.dispatch(upDownPage(pagePopular));
+      case "downPage":
+        if (pagePopular > 1) {
+          pagePopular--;
+          return this.props.dispatch(upDownPage(pagePopular));
         } else {
           break;
         }
@@ -47,9 +45,9 @@ class Popular extends Component {
       <PopularPage
         tvShows={this.props.popularTvShows}
         showDetails={this.showDetails}
-        upPage={() => this.aditional("upPageSearch")}
-        downPage={() => this.aditional("downPageSearch")}
-        pageHome={pageHome}
+        upPage={() => this.aditional("upPage")}
+        downPage={() => this.aditional("downPage")}
+        pagePopular={pagePopular}
         name={this.props.name}
       />
     );

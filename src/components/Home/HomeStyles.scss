@@ -8,4 +8,11 @@
     border-bottom: solid 2px rgb(112, 112, 112)
     
   }
+  .boton{
+    @include boton
+  }
+  .numero{
+    @include numero;
+    color: black;
+  }
 }

@@ -5,6 +5,9 @@ const reducer = (state = defaultState, { type, payload }) => {
     case "searchTvShows": {
       return payload;
     }
+    case "upDownPageSearch": {
+      return payload;
+    }
     default:
       return state;
   }

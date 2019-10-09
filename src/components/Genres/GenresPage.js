@@ -9,7 +9,7 @@ const GenresPage = props => {
       <NavBarIndex />
       <div>
           <div className="container">
-            <h2 className="text-center mt-5">Genre Tv Shows: {props.genreName}</h2>
+            <h2 className="text-center mt-5">Genre Tv Shows: {props.genreNameId.name}</h2>
           </div>
           <div className="row justify-content-center ">
             <div className="col-11 row justify-content-center">
@@ -29,7 +29,7 @@ const GenresPage = props => {
                 -
               </button>
               <p className="numero col-1 mx-3 text-center p-0">
-                {props.paginaHome}
+                {props.pageGenre}
               </p>
               <button className="boton " onClick={props.upPage}>
                 +

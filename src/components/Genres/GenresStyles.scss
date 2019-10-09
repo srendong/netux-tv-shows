@@ -1,2 +1,11 @@
 .GenresPage {
+    .boton {
+        @include boton;
+        outline: none
+      }
+      .numero {
+        @include numero;
+        color: black;
+        outline: none
+      }
 }

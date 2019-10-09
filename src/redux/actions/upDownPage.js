@@ -1,13 +1,13 @@
 import axios from "axios";
-export const type = "upDownPageSearch";
+export const type = "upDownPage";
 
 //ApiKey
 const apiKey = "f07c26de5329071134a9626cce270fd7";
 
-const upDownPageSearch = (name, num) => {
+const upDownPage = num => {
   return async dispatch => {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&language=en-US&query=${name}&page=${num}`
+      `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}&language=en-US&page=${num}`
     );
     dispatch({
       type,
@@ -16,4 +16,4 @@ const upDownPageSearch = (name, num) => {
   };
 };
 
-export default upDownPageSearch;
+export default upDownPage;

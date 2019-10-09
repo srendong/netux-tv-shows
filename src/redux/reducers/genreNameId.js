@@ -2,7 +2,7 @@ const defaultState = "";
 
 const reducer = (state = defaultState, { type, payload }) => {
   switch (type) {
-    case "getGenreName": {
+    case "getGenreNameId": {
         return payload;
       }
     default:

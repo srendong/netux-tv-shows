@@ -56,9 +56,9 @@ const DetailsPage = ({
                         <h4>Genres:</h4>
                         {tvShow.genres.map(genre => (
                           <button
-                            className="mx-2"
+                            className="genreBtn mx-2"
                             key={genre.name}
-                            onClick={() => tvShowsByGenre(genre.id, genre.name)}
+                            onClick={() => tvShowsByGenre(genre.id, genre)}
                           >
                             {genre.name}
                           </button>
@@ -66,7 +66,7 @@ const DetailsPage = ({
                       </div>
                       <div className="d-flex align-items-baseline">
                         <h4>Rating:</h4>
-                        <p className="mx-2">{tvShow.vote_average}</p>
+                        <p className="rating mx-2">{tvShow.vote_average}</p>
                       </div>
                     </div>
                   </div>
@@ -101,7 +101,7 @@ const DetailsPage = ({
                   {characters.length > 0 ? (
                     characters.map(actor => (
                       <div
-                        className="col-6 col-md-4 col-lg-3 col-xl-2  p-1"
+                        className="col-6 col-md-4 col-lg-3 col-xl-2 my-1 p-1"
                         key={actor.id}
                       >
                         <Actor actor={actor} />

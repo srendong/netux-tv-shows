@@ -9,7 +9,7 @@ import reviews from "./reducers/reviews";
 import characters from "./reducers/characters";
 import popularTvShows from "./reducers/popularTvShows";
 import similarTvShows from "./reducers/similarTvShows";
-import genreName from "./reducers/genreName";
+import genreNameId from "./reducers/genreNameId";
 
 //redux thunk
 import thunk from "redux-thunk";
@@ -24,7 +24,7 @@ const reducer = combineReducers({
   characters,
   popularTvShows,
   similarTvShows,
-  genreName
+  genreNameId
 });
 
 //thunk

@@ -17,6 +17,12 @@
       color: rgb(236, 234, 234);
     }
   }
+  span{
+    @include parrafo;
+    color: rgb(255, 187, 0);
+    font-size: 1.3rem;
+
+  }
   .subtitle {
     @include parrafo;
     font-size: 2rem;
@@ -27,5 +33,13 @@
     @media (max-width: 767.98px) {
       font-size: 1.6rem;
     }
+  }
+  h6{
+    @include parrafo;
+    font-size: 1.3rem;
+    color: rgb(202, 202, 202);
+  }
+  .rating{
+    color: rgb(255, 187, 0);
   }
 }

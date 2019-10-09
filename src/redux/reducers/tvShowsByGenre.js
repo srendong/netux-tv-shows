@@ -5,6 +5,9 @@ const reducer = (state = defaultState, { type, payload }) => {
     case "loadByGenres": {
       return payload;
     }
+    case "upDownPageGenre": {
+      return payload;
+    }
     default:
       return state;
   }

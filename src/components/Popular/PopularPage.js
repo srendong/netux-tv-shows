@@ -29,7 +29,7 @@ const PopularPage = props => {
                 -
               </button>
               <p className="numero col-1 mx-3 text-center p-0">
-                {props.paginaHome}
+                {props.pagePopular}
               </p>
               <button className="boton " onClick={props.upPage}>
                 +

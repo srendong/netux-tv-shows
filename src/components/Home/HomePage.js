@@ -14,12 +14,17 @@ const HomePage = props => {
       ) : (
         <div>
           <div className="container">
-            <h2 className="text-center my-3  text-capitalize">Search: {props.name.replace("%20"," ")}</h2>
+            <h2 className="text-center my-3  text-capitalize">
+              Search: {props.name.replace("%20", " ")}
+            </h2>
           </div>
           <div className="row justify-content-center ">
             <div className="col-11 row justify-content-center">
               {props.tvShows.map(tvShow => (
-                <div key={tvShow.id} className="col-12 col-sm-6 col-md-4 col-lg-3 p-1">
+                <div
+                  key={tvShow.id}
+                  className="col-12 col-sm-6 col-md-4 col-lg-3 p-1"
+                >
                   <TvShow
                     tvShow={tvShow}
                     showDetails={() => props.showDetails(tvShow.id)}
@@ -34,7 +39,7 @@ const HomePage = props => {
                 -
               </button>
               <p className="numero col-1 mx-3 text-center p-0">
-                {props.paginaHome}
+                {props.pageHome}
               </p>
               <button className="boton " onClick={props.upPage}>
                 +

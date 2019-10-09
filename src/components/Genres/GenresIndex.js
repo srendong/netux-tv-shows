@@ -10,7 +10,7 @@ import loadCharacters from "../../redux/actions/loadCharacters";
 import loadReviews from "../../redux/actions/loadReviews";
 import loadSimilarTvShows from "../../redux/actions/loadSimilarTvShows";
 import loadTrailer from "../../redux/actions/loadTrailer";
-import upDownPageSearch from "../../redux/actions/upDownPageSearch";
+import upDownPageGenre from "../../redux/actions/upDownPageGenre";
 
 let pageGenres = 1;
 
@@ -26,16 +26,17 @@ class Genres extends Component {
   };
   aditional = action => {
     switch (action) {
-      case "upPageSearch":
+      case "upPageGenre":
         pageGenres++;
+        console.log(pageGenres, this.props.genreNameId.id, this.props.genreNameId.name)
         return this.props.dispatch(
-          upDownPageSearch(this.props.name, pageGenres)
+          upDownPageGenre(this.props.genreNameId.id, pageGenres)
         );
-      case "downPageSearch":
+      case "downPageGenre":
         if (pageGenres > 1) {
           pageGenres--;
           return this.props.dispatch(
-            upDownPageSearch(this.props.name, pageGenres)
+            upDownPageGenre(this.props.genreNameId.id, pageGenres)
           );
         } else {
           break;
@@ -49,11 +50,11 @@ class Genres extends Component {
       <GenresPage
         tvShows={this.props.tvShowsByGenre}
         showDetails={this.showDetails}
-        upPage={() => this.aditional("upPageSearch")}
-        downPage={() => this.aditional("downPageSearch")}
-        pageGenres={pageGenres}
+        upPage={() => this.aditional("upPageGenre")}
+        downPage={() => this.aditional("downPageGenre")}
+        pageGenre={pageGenres}
         name={this.props.name}
-        genreName={this.props.genreName}
+        genreNameId={this.props.genreNameId}
       />
     );
   }
@@ -61,7 +62,7 @@ class Genres extends Component {
 const mapStateToProps = state => {
   return {
     tvShowsByGenre: state.tvShowsByGenre,
-    genreName: state.genreName
+    genreNameId: state.genreNameId
   };
 };
 
