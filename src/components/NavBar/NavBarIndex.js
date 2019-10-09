@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 // components
 import NavBarPage from "./NavBarPage";
 //actions
@@ -26,7 +27,7 @@ class NavBar extends Component {
     e.preventDefault();
     this.props.dispatch(searchName(this.state.name.replace(/ /g, "%20")));
     this.props.dispatch(searchTvShows(this.state.name.replace(/ /g, "%20")));
-    // browserHistory.push("/");
+    this.props.history.push(`/home}`);
     this.setState({ name: "" });
   };
 
@@ -35,6 +36,7 @@ class NavBar extends Component {
       collapse: !this.state.collapse
     });
   }
+
   render() {
     return (
       <NavBarPage
@@ -49,4 +51,4 @@ class NavBar extends Component {
   }
 }
 
-export default connect()(NavBar);
+export default withRouter(connect()(NavBar));

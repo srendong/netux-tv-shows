@@ -10,7 +10,7 @@ import {
   MDBNavLink,
   MDBFormInline,
 } from "mdbreact";
-import { HashRouter as Router } from "react-router-dom";
+import { HashRouter as Router, withRouter } from "react-router-dom";
 
 const NavbarPage = ({ state, onClick, value, handleChange, handleSubmit }) => {
   return (
@@ -65,4 +65,4 @@ const NavbarPage = ({ state, onClick, value, handleChange, handleSubmit }) => {
   );
 };
 
-export default NavbarPage;
+export default withRouter(NavbarPage);

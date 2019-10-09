@@ -11,8 +11,10 @@ const DetailsPage = ({
   trailer,
   characters,
   similarTvShows,
-  showDetails
+  showDetails,
+  tvShowsByGenre
 }) => {
+  const tvTrailer = trailer[0];
   return (
     <div className="DetailsPage">
       <NavBarIndex />
@@ -43,9 +45,13 @@ const DetailsPage = ({
                   <div className="d-flex align-items-baseline">
                     <h4>Genres:</h4>
                     {tvShow.genres.map(genre => (
-                      <p className="mx-2" key={genre.id}>
+                      <button
+                        className="mx-2"
+                        key={genre.name}
+                        onClick={() => tvShowsByGenre(genre.id)}
+                      >
                         {genre.name}
-                      </p>
+                      </button>
                     ))}
                   </div>
                   <div className="d-flex  align-items-baseline">
@@ -56,20 +62,22 @@ const DetailsPage = ({
               </div>
             </div>
           </div>
-          <div className="col-12 col-md-4 d-flex justify-center align-items-center p-4 elegant-color-dark">
-          {trailer.length >0? 
-            <ReactPlayer
-              url={`https://www.youtube.com/watch?v=${trailer.key}`}
-            />:
-            <p>Trailer Not Found</p>
-          }
-            
+          <div className="col-12 col-md-4 d-flex justify-content-center align-items-center p-4 elegant-color-dark">
+            {trailer.length > 0 ? (
+              <ReactPlayer
+                url={`https://www.youtube.com/watch?v=${tvTrailer.key}`}
+              />
+            ) : (
+              <div className="w-100 h-100 border d-flex justify-content-center align-items-center">
+                <p>Trailer Not Found</p>
+              </div>
+            )}
           </div>
           <div className="col-12 col-md-8 m-0 elegant-color">
             <div>
               <h3 className="text-center my-4">{tvShow.name} actors</h3>
             </div>
-            <div className="row">
+            <div className="row justify-content-around">
               {characters.map(actor => (
                 <div
                   className="col-6 col-md-4 col-lg-3 col-xl-2  p-1"

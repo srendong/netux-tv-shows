@@ -2,7 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 //reducers
 import tvShows from "./reducers/tvShows";
 import details from "./reducers/details";
-import genres from "./reducers/genres";
+import tvShowsByGenre from "./reducers/tvShowsByGenre";
 import name from "./reducers/name";
 import trailer from "./reducers/trailer";
 import reviews from "./reducers/reviews";
@@ -19,7 +19,7 @@ import thunk from "redux-thunk";
 const reducer = combineReducers({
   tvShows,
   details,
-  genres,
+  tvShowsByGenre,
   name,
   trailer,
   reviews,

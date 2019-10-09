@@ -23,9 +23,9 @@ class App extends Component {
         <HashRouter>
           <Switch>
             <Route path="/home" component={Home} />
-            <Route path="/details" component={Details} />
+            <Route path="/details/:id" component={Details} />
             <Route path="/popular" component={Popular} />
-            <Route path="/genres" component={Genres} />
+            <Route path="/genres/:id" component={Genres} />
             <Redirect path="/" to="/home" />
           </Switch>
         </HashRouter>
