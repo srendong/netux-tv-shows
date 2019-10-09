@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "618a9b798ad151d5df2f2628728734e2",
+    "revision": "9c33f84b261a3b48ee2ee4221ed17bc6",
     "url": "/netux-tv-shows/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/netux-tv-shows/static/css/2.63181444.chunk.css"
   },
   {
-    "revision": "3b6bdd66b51bde4db8fe",
+    "revision": "7c2e01c4d19ac52f50ca",
     "url": "/netux-tv-shows/static/css/main.24fc4b42.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/netux-tv-shows/static/js/2.b07bccb1.chunk.js"
   },
   {
-    "revision": "3b6bdd66b51bde4db8fe",
-    "url": "/netux-tv-shows/static/js/main.cfd0ba4d.chunk.js"
+    "revision": "7c2e01c4d19ac52f50ca",
+    "url": "/netux-tv-shows/static/js/main.a9ae7d5c.chunk.js"
   },
   {
     "revision": "e221590b7b16fa06e5c3",
