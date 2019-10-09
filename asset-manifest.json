@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/netux-tv-shows/static/css/main.a168f7ca.chunk.css",
+    "main.js": "/netux-tv-shows/static/js/main.b37675ed.chunk.js",
+    "main.js.map": "/netux-tv-shows/static/js/main.b37675ed.chunk.js.map",
+    "runtime-main.js": "/netux-tv-shows/static/js/runtime-main.d62a04f1.js",
+    "runtime-main.js.map": "/netux-tv-shows/static/js/runtime-main.d62a04f1.js.map",
+    "static/css/2.63181444.chunk.css": "/netux-tv-shows/static/css/2.63181444.chunk.css",
+    "static/js/2.b07bccb1.chunk.js": "/netux-tv-shows/static/js/2.b07bccb1.chunk.js",
+    "static/js/2.b07bccb1.chunk.js.map": "/netux-tv-shows/static/js/2.b07bccb1.chunk.js.map",
+    "index.html": "/netux-tv-shows/index.html",
+    "precache-manifest.6ae2125e306bb2f759b98d573d2d1289.js": "/netux-tv-shows/precache-manifest.6ae2125e306bb2f759b98d573d2d1289.js",
+    "service-worker.js": "/netux-tv-shows/service-worker.js",
+    "static/css/2.63181444.chunk.css.map": "/netux-tv-shows/static/css/2.63181444.chunk.css.map",
+    "static/css/main.a168f7ca.chunk.css.map": "/netux-tv-shows/static/css/main.a168f7ca.chunk.css.map",
+    "static/media/mdb.css": "/netux-tv-shows/static/media/arrow_right.8ef6a08c.svg",
+    "static/media/all.min.css": "/netux-tv-shows/static/media/fa-solid-900.c2801fb4.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d62a04f1.js",
+    "static/css/2.63181444.chunk.css",
+    "static/js/2.b07bccb1.chunk.js",
+    "static/css/main.a168f7ca.chunk.css",
+    "static/js/main.b37675ed.chunk.js"
+  ]
+}
