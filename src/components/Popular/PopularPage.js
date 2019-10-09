@@ -11,6 +11,32 @@ const PopularPage = props => {
           <div className="container">
             <h2 className="text-center mt-3 ">Popular Tv shows</h2>
           </div>
+          <div className="d-flex justify-content-center w-100 my-3">
+            <button
+              type="button"
+              className={
+                props.currentState.order
+                  ? "sort btn btn-rounded blue-grey lighten-1 text-white "
+                  : "sort btn btn-rounded  blue-grey darken-1 text-white"
+              }
+              onClick={props.changeOrder}
+            >
+              {props.currentState.order ? "No order" : "Order"}
+            </button>
+            <button
+              type="button"
+              className={
+                props.currentState.order
+                  ? "sort2 btn "
+                  : "sort2 d-none btn unique-color-dark text-white"
+              }
+              onClick={props.changeOrderByRating}
+            >
+              {props.currentState.orderByRating
+                ? "wors to Best"
+                : "Best to worst"}
+            </button>
+          </div>
           <div className="row justify-content-center ">
             <div className="col-11 row justify-content-center">
               {props.tvShows.map(tvShow => (

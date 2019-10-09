@@ -12,7 +12,19 @@ import { withRouter } from "react-router-dom";
 let pageHome = 1;
 
 class Home extends Component {
-  showDetails =  id => {
+  state = {
+    order: false,
+    orderByRating: false
+  };
+  changeOrder = () => {
+    this.setState({ ...this.state, order: !this.state.order });
+    this.props.dispatch(upDownPageSearch(this.props.name, pageHome));
+  };
+  changeOrderByRating = () => {
+    this.setState({ ...this.state, orderByRating: !this.state.orderByRating });
+  };
+  
+  showDetails = id => {
     this.props.dispatch(showDeatails(id));
     this.props.dispatch(loadCharacters(id));
     this.props.dispatch(loadReviews(id));
@@ -20,7 +32,6 @@ class Home extends Component {
     this.props.dispatch(loadTrailer(id));
     this.props.history.push(`/details/${id}`);
   };
-
   aditional = action => {
     switch (action) {
       case "upPageSearch":
@@ -39,16 +50,26 @@ class Home extends Component {
         return null;
     }
   };
+  tvShowSort = () => {
+    if (this.state.orderByRating) {
+      return this.props.tvShows.sort((a, b) => a.vote_average - b.vote_average);
+    } else {
+      return this.props.tvShows.sort((a, b) => b.vote_average - a.vote_average);
+    }
+  };
 
   render() {
     return (
       <HomePage
-        tvShows={this.props.tvShows}
+        currentState={this.state}
+        tvShows={this.state.order ? this.tvShowSort(): this.props.tvShows}
         showDetails={this.showDetails}
         upPage={() => this.aditional("upPageSearch")}
         downPage={() => this.aditional("downPageSearch")}
         pageHome={pageHome}
         name={this.props.name}
+        changeOrder={this.changeOrder}
+        changeOrderByRating={this.changeOrderByRating}
       />
     );
   }
