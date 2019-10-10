@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/netux-tv-shows/precache-manifest.5f3fd8912e6e73cdee36b3b2c9de94db.js"
+  "/netux-tv-shows/precache-manifest.983ee04ee21ab3a9798957ba6e77f2fa.js"
 );
 
 self.addEventListener('message', (event) => {
