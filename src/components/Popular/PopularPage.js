@@ -33,8 +33,8 @@ const PopularPage = props => {
             onClick={props.changeOrderByRating}
           >
             {props.currentState.orderByRating
-              ? "wors to Best"
-              : "Best to worst"}
+              ? "Best to worst"
+              : "Worst to Best"}
           </button>
         </div>
         <div className="row justify-content-center ">

@@ -8,9 +8,6 @@ const GenresPage = props => {
     <div className="PopularPage">
       <NavBarIndex />
       <div>
-        <h6 className="text-center my-3  text-capitalize">
-          Genre Tv Shows: <h2>{props.genreNameId.name}</h2>
-        </h6>
         <div className="container">
           <h6 className="text-center my-3  text-capitalize">
             Genre Tv Shows: <h2>{props.genreNameId.name}</h2>

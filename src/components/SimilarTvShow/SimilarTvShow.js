@@ -17,11 +17,7 @@ const SimilarTvShows = ({ tvShow, showDetails }) => {
           )}
         </div>
         <div className="col-7 col-md-8d-flex flex-column align-items-center">
-          {tvShow.name.length > 8 ? (
-            <h4 className="mt-2">{tvShow.name.slice(0, 8)}...</h4>
-          ) : (
-            <h4 className="mt-2">{tvShow.name}</h4>
-          )}
+          <h4 className="mt-2">{tvShow.name}</h4>
           {tvShow.overview.length > 60 ? (
             <p className="subtitle">{tvShow.overview.slice(0, 60)}...</p>
           ) : (
